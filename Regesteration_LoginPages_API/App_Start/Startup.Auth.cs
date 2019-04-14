@@ -38,7 +38,7 @@ namespace Regesteration_LoginPages_API
                 TokenEndpointPath = new PathString("/Token"),
                 Provider = new ApplicationOAuthProvider(PublicClientId),
                 AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
+                AccessTokenExpireTimeSpan = TimeSpan.FromSeconds(10),
                 // In production mode set AllowInsecureHttp = false
                 AllowInsecureHttp = true
             };
@@ -59,11 +59,11 @@ namespace Regesteration_LoginPages_API
             //    appId: "",
             //    appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "610332788382-bon86schkpfga4mrdinj3a0u1kevt7cj.apps.googleusercontent.com",
+                ClientSecret = "QnrF87Vr9EGCE-dURZoSm7m_"
+            });
         }
     }
 }
